@@ -1,0 +1,93 @@
+<html> 
+<head>
+  <title>Header </title>
+</head>
+
+<body>
+   <div >
+   
+     <header class="navbar navbar-fixed-top navbar-inverse">
+<div class="container ">
+<%= link_to "sample app", '#', id: "logo" %>
+<nav class="navbar navbar-expand-lg fixed-top bg-dark" data-bs-theme="dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Sample App</a>
+
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <%= link_to "Home", home_path, class: "nav-link"%>
+         
+        </li>
+        
+        <li class="nav-item">
+          <%= link_to "Help", helf_path,  class: "nav-link" %>
+          
+        ```erb
+<% if session[:user_id] %>
+<li><%= link_to "Users", users_path, class: "nav-link" %></li>
+  <!-- Account Dropdown -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle"
+       href="#"
+       id="accountDropdown"
+       role="button"
+       data-bs-toggle="dropdown"
+       aria-expanded="false">
+      Account
+    </a>
+
+    
+
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+
+      <!-- Profile -->
+      <li>
+        <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
+      </li>
+
+      <!-- Settings -->
+      <li><%= link_to "Settings",  edit_user_path(current_user), class: "dropdown-item" %></li>
+      
+
+      <li><hr class="dropdown-divider"></li>
+
+      <!-- Logout -->
+      <li>
+        <%= button_to "Logout",
+            logout_path,
+            method: :delete,
+            class: "dropdown-item",
+            form: { class: "m-0" } %>
+      </li>
+
+    </ul>
+  </li>
+
+<% else %>
+
+  <li class="nav-item">
+    <%= link_to "Login", login_path, class: "nav-link" %>
+  </li>
+
+<% end %>
+```
+
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+</header>
+   <div>
+</body>
+<br><br>
+ 
+</html>

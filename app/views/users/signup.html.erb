@@ -1,0 +1,35 @@
+<h1 class="text-center my-4">Sign Up</h1>
+
+<%= form_with(model: @user, local: true) do |f| %>
+<%= render "shared/error_messages", object: @user %>
+  <div class="mb-3">
+    <%= f.label :name, class: "form-label" %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Enter your name" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :email, class: "form-label" %>
+    <%= f.email_field :email, class: "form-control", placeholder: "Enter your email" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :password, class: "form-label" %>
+    <%= f.password_field :password, class: "form-control", placeholder: "Enter your password" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :password_confirmation, "Confirm Password", class: "form-label" %>
+    <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm your password" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :age, "Age", class: "form-label" %>
+    <%= f.text_field :Age, class: "form-control", placeholder: "Confirm your Age" %>
+  </div>
+
+ 
+
+  <%= f.submit "Create Account", class: "btn btn-primary" %>
+  <p>Alread have Account? <%= link_to "Login now!", login_path %></p>
+
+<% end %>
